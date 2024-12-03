@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_marginLeft="6dp"
+    android:layout_marginRight="6dp"
+    >
+    <TextView
+        android:id="@+id/player"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Player 1"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="@font/poppinsbold"
+        android:textColor="@color/font"
+        />
+    <ImageView
+        android:id="@+id/imgHero"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/vengeance"
+        android:layout_marginBottom="5dp"/>
+    <TextView
+        android:id="@+id/namaHero"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nama Hero"
+        android:layout_marginBottom="5dp"
+        android:fontFamily="@font/poppinssemibold"
+        android:textColor="@color/font"
+        android:textAlignment="center"
+        />
+    <ImageView
+        android:id="@+id/imgRole"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/vengeance"/>
+</LinearLayout>
