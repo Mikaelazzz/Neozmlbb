@@ -1,11 +1,11 @@
 package id.vincent.neozmlbb
 
 import android.annotation.SuppressLint
+import android.content.BroadcastReceiver
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.CheckBox
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.RadioButton
@@ -16,6 +16,32 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import org.json.JSONArray
 import kotlinx.coroutines.*
+import android.content.Context
+import android.content.Intent
+import android.content.IntentFilter
+import android.net.ConnectivityManager
+import android.net.NetworkCapabilities
+import android.widget.Toast
+import androidx.core.view.setPadding
+
+
+object NetworkUtil {
+    fun isConnected(context: Context): Boolean {
+        val connectivityManager = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val activeNetwork = connectivityManager.activeNetwork ?: return false
+        val capabilities = connectivityManager.getNetworkCapabilities(activeNetwork) ?: return false
+        return capabilities.hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET)
+    }
+}
+
+class NetworkChangeReceiver(private val onNetworkChange: (Boolean) -> Unit) : BroadcastReceiver() {
+    override fun onReceive(context: Context?, intent: Intent?) {
+        context?.let {
+            val isConnected = NetworkUtil.isConnected(it)
+            onNetworkChange(isConnected)
+        }
+    }
+}
 
 class HeroShuffleManager(
     private val mainActivity: MainActivity,
@@ -79,7 +105,17 @@ class HeroShuffleManager(
                 else -> R.drawable.vengeance
             }
             holder.roleImageView.setImageResource(roleImageResourceId)
+
+            // Check the length of hero's name and adjust text size
+            val heroName = hero.hero
+            if (heroName.length > 6) {
+                holder.heroNameTextView.textSize = 11f  // Adjust text size if more than 7 characters
+                holder.heroNameTextView.setPadding(0,5.2.toInt(),0,0 )
+            } else {
+                holder.heroNameTextView.textSize = 13f  // Default text size
+            }
         }
+
 
         override fun getItemCount() = heroes.size
     }
@@ -340,18 +376,88 @@ fun MainActivity.showToast(message: String) {
     android.widget.Toast.makeText(this, message, android.widget.Toast.LENGTH_SHORT).show()
 }
 
-// In MainActivity
 class MainActivity : AppCompatActivity() {
     private lateinit var heroShuffleManager: HeroShuffleManager
+    private lateinit var networkChangeReceiver: NetworkChangeReceiver
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+
+        // Register NetworkChangeReceiver
+        try {
+            networkChangeReceiver = NetworkChangeReceiver { isConnected ->
+                if (isConnected) {
+
+                    setupMainLayout() // Muat ulang layout utama
+                } else {
+
+                    showNoInternetLayout() // Tampilkan pesan tidak ada internet
+                }
+            }
+
+            val filter = IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION)
+            registerReceiver(networkChangeReceiver, filter)
+
+            // Inisialisasi layout sesuai kondisi awal
+            checkInternetAndSetup()
+        } catch (e: Exception) {
+
+        }
+    }
+
+
+
+    override fun onDestroy() {
+        super.onDestroy()
+        try {
+            unregisterReceiver(networkChangeReceiver)
+        } catch (e: IllegalArgumentException) {
+            // Abaikan jika receiver belum terdaftar
+        }
+    }
+
+
+    /**
+     * Periksa koneksi internet dan atur layout yang sesuai
+     */
+    private fun checkInternetAndSetup() {
+        if (NetworkUtil.isConnected(this)) {
+            setupMainLayout()
+        } else {
+            showNoInternetLayout()
+        }
+    }
+
+    /**
+     * Tampilkan layout tanpa internet
+     */
+    private fun showNoInternetLayout() {
+        setContentView(R.layout.internet)
+        val retryButton: Button = findViewById(R.id.button_signal)
+
+        // Tombol untuk mencoba ulang
+        retryButton.setOnClickListener {
+            if (NetworkUtil.isConnected(this)) {
+                setupMainLayout() // Muat ulang layout utama jika internet tersedia
+            } else {
+                Toast.makeText(this, "Tidak ada koneksi internet!", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+
+
+    /**
+     * Inisialisasi layout utama dan logika aplikasi
+     */
+    private fun setupMainLayout() {
         setContentView(R.layout.activity_main)
 
-        // Read JSON from resources
+        // Membaca data JSON hero dari file assets
         val jsonString = assets.open("heroes.json").bufferedReader().use { it.readText() }
 
+        // Inisialisasi HeroShuffleManager
         heroShuffleManager = HeroShuffleManager(
             mainActivity = this,
             heroData = HeroShuffleManager.parseHeroData(jsonString),
@@ -363,6 +469,7 @@ class MainActivity : AppCompatActivity() {
             shuffleButton = findViewById(R.id.shuffle)
         )
 
+        // Setup logika shuffle
         heroShuffleManager.setupShuffleLogic()
     }
 }
