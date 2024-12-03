@@ -1,0 +1,75 @@
+[
+  {
+    "hero": "Miya",
+    "imageHero": "hero1",
+    "role": "Gold"
+  },{
+  "hero": "Balmond",
+  "imageHero": "hero2",
+  "role": "Jung"
+},{
+  "hero": "Saber",
+  "imageHero": "hero3",
+  "role": "Jung"
+},{
+  "hero": "Alice",
+  "imageHero": "hero4",
+  "role": "Exp"
+},{
+  "hero": "Nana",
+  "imageHero": "hero5",
+  "role": "Mage"
+},{
+  "hero": "Tigreal",
+  "imageHero": "hero6",
+  "role": "Roam"
+},{
+  "hero": "Alucard",
+  "imageHero": "hero7",
+  "role": "Jung"
+},{
+  "hero": "Karina",
+  "imageHero": "hero8",
+  "role": "Jung"
+},{
+  "hero": "Akai",
+  "imageHero": "hero9",
+  "role": "Roam"
+},{
+  "hero": "Franco",
+  "imageHero": "hero10",
+  "role": "Roam"
+},{
+  "hero": "Bane",
+  "imageHero": "hero11",
+  "role": "Jung"
+},{
+  "hero": "Bruno",
+  "imageHero": "hero12",
+  "role": "Gold"
+},{
+  "hero": "Clint",
+  "imageHero": "hero13",
+  "role": "Gold"
+},{
+  "hero": "Rafaela",
+  "imageHero": "hero14",
+  "role": "Roam"
+},{
+  "hero": "Eudora",
+  "imageHero": "hero15",
+  "role": "Mage"
+},{
+  "hero": "Zilong",
+  "imageHero": "hero16",
+  "role": "Exp"
+},{
+  "hero": "Fanny",
+  "imageHero": "hero17",
+  "role": "Jung"
+},{
+  "hero": "Layla",
+  "imageHero": "hero18",
+  "role": "Gold"
+}
+]
