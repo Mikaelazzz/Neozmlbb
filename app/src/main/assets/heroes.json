@@ -71,5 +71,497 @@
   "hero": "Layla",
   "imageHero": "hero18",
   "role": "Gold"
-}
+},{
+  "hero": "Minotaur",
+  "imageHero": "hero19",
+  "role": "Gold"
+},{
+  "hero": "Lolita",
+  "imageHero": "hero20",
+  "role": "Roam"
+},{
+  "hero": "Hayabusa",
+  "imageHero": "hero21",
+  "role": "Jung"
+},
+  {
+    "hero": "Gord",
+    "imageHero": "hero22",
+    "role": "Mage"
+  },
+  {
+    "hero": "Natalia",
+    "imageHero": "hero23",
+    "role": "Roam"
+  },
+  {
+    "hero": "Chou",
+    "imageHero": "hero24",
+    "role": "Exp"
+  },
+  {
+    "hero": "Sun",
+    "imageHero": "hero25",
+    "role": "Exp"
+  },
+  {
+    "hero": "Alpha",
+    "imageHero": "hero26",
+    "role": "Jung"
+  },
+  {
+    "hero": "Ruby",
+    "imageHero": "hero27",
+    "role": "Exp"
+  },
+  {
+    "hero": "Yi Sun-shin",
+    "imageHero": "hero28",
+    "role": "Jung"
+  },
+  {
+    "hero": "Moskov",
+    "imageHero": "hero29",
+    "role": "Gold"
+  },
+  {
+    "hero": "Johnson",
+    "imageHero": "hero30",
+    "role": "Roam"
+  },
+  {
+    "hero": "Cyclop",
+    "imageHero": "hero31",
+    "role": "Mage"
+  },
+  {
+    "hero": "Estes",
+    "imageHero": "hero32",
+    "role": "Roam"
+  },
+  {
+    "hero": "Hilda",
+    "imageHero": "hero33",
+    "role": "Roam"
+  },
+  {
+    "hero": "Aurora",
+    "imageHero": "hero34",
+    "role": "Mage"
+  },
+  {
+    "hero": "Lapu-lapu",
+    "imageHero": "hero35",
+    "role": "Exp"
+  },
+  {
+    "hero": "Vexana",
+    "imageHero": "hero36",
+    "role": "Mage"
+  },
+  {
+    "hero": "Roger",
+    "imageHero": "hero37",
+    "role": "Jung"
+  },
+  {
+    "hero": "Karrie",
+    "imageHero": "hero38",
+    "role": "Gold"
+  },
+  {
+    "hero": "Gatotkaca",
+    "imageHero": "hero39",
+    "role": "Roam"
+  },
+  {
+    "hero": "Harley",
+    "imageHero": "hero40",
+    "role": "Jung"
+  },
+  {
+    "hero": "Irithel",
+    "imageHero": "hero41",
+    "role": "Gold"
+  },
+  {
+    "hero": "Grock",
+    "imageHero": "hero42",
+    "role": "Roam"
+  },
+  {
+    "hero": "Argus",
+    "imageHero": "hero43",
+    "role": "Exp"
+  },
+  {
+    "hero": "Odette",
+    "imageHero": "hero44",
+    "role": "Mage"
+  },
+  {
+    "hero": "Lancelot",
+    "imageHero": "hero45",
+    "role": "Jung"
+  },
+  {
+    "hero": "Diggie",
+    "imageHero": "hero46",
+    "role": "Roam"
+  },
+  {
+    "hero": "Hylos",
+    "imageHero": "hero47",
+    "role": "Roam"
+  },
+  {
+    "hero": "Zhask",
+    "imageHero": "hero48",
+    "role": "Mage"
+  },
+  {
+    "hero": "Helcurt",
+    "imageHero": "hero49",
+    "role": "Jung"
+  },
+  {
+    "hero": "Pharsa",
+    "imageHero": "hero50",
+    "role": "Mage"
+  },
+  {
+    "hero": "Lesley",
+    "imageHero": "hero51",
+    "role": "Gold"
+  },
+  {
+    "hero": "Jawhead",
+    "imageHero": "hero52",
+    "role": "Exp"
+  },
+  {
+    "hero": "Angela",
+    "imageHero": "hero53",
+    "role": "Roam"
+  },
+  {
+    "hero": "Gusion",
+    "imageHero": "hero54",
+    "role": "Jung"
+  },
+  {
+    "hero": "Valir",
+    "imageHero": "hero55",
+    "role": "Mage"
+  },
+  {
+    "hero": "Martis",
+    "imageHero": "hero56",
+    "role": "Jung"
+  },
+  {
+    "hero": "Uranus",
+    "imageHero": "hero57",
+    "role": "Exp"
+  },
+  {
+    "hero": "Hanabi",
+    "imageHero": "hero58",
+    "role": "Gold"
+  },
+  {
+    "hero": "Chang'e",
+    "imageHero": "hero59",
+    "role": "Mage"
+  },
+  {
+    "hero": "Kaja",
+    "imageHero": "hero60",
+    "role": "Roam"
+  },
+  {
+    "hero": "Selena",
+    "imageHero": "hero61",
+    "role": "Roam"
+  },
+  {
+    "hero": "Aldous",
+    "imageHero": "hero62",
+    "role": "Exp"
+  },
+  {
+    "hero": "Claude",
+    "imageHero": "hero63",
+    "role": "Gold"
+  },
+  {
+    "hero": "Vale",
+    "imageHero": "hero64",
+    "role": "Mage"
+  },
+  {
+    "hero": "Leomord",
+    "imageHero": "hero65",
+    "role": "Jung"
+  },
+  {
+    "hero": "Lunox",
+    "imageHero": "hero66",
+    "role": "Mage"
+  },
+  {
+    "hero": "Hanzo",
+    "imageHero": "hero67",
+    "role": "Jung"
+  },
+  {
+    "hero": "Belerick",
+    "imageHero": "hero68",
+    "role": "Roam"
+  },
+  {
+    "hero": "Kimmy",
+    "imageHero": "hero69",
+    "role": "Gold"
+  },
+  {
+    "hero": "Thamuz",
+    "imageHero": "hero70",
+    "role": "Exp"
+  },
+  {
+    "hero": "Harith",
+    "imageHero": "hero71",
+    "role": "Mage"
+  },
+  {
+    "hero": "Minshitar",
+    "imageHero": "hero72",
+    "role": "Exp"
+  },
+  {
+    "hero": "Kadita",
+    "imageHero": "hero73",
+    "role": "Mage"
+  },
+  {
+    "hero": "Faramis",
+    "imageHero": "hero74",
+    "role": "Mage"
+  },
+  {
+    "hero": "Badang",
+    "imageHero": "hero75",
+    "role": "Exp"
+  },
+  {
+    "hero": "Kufra",
+    "imageHero": "hero76",
+    "role": "Roam"
+  },
+  {
+    "hero": "Granger",
+    "imageHero": "hero77",
+    "role": "Jung"
+  },
+  {
+    "hero": "Guinevere",
+    "imageHero": "hero78",
+    "role": "Exp"
+  },
+  {
+    "hero": "Esmeralda",
+    "imageHero": "hero79",
+    "role": "Exp"
+  },
+  {
+    "hero": "Terizla",
+    "imageHero": "hero80",
+    "role": "Exp"
+  },
+  {
+    "hero": "X.Borg",
+    "imageHero": "hero81",
+    "role": "Exp"
+  },
+  {
+    "hero": "Dyrroth",
+    "imageHero": "hero82",
+    "role": "Exp"
+  },
+  {
+    "hero": "Lylia",
+    "imageHero": "hero83",
+    "role": "Mage"
+  },
+  {
+    "hero": "Baxia",
+    "imageHero": "hero84",
+    "role": "Jung"
+  },
+  {
+    "hero": "Masha",
+    "imageHero": "hero85",
+    "role": "Exp"
+  },
+  {
+    "hero": "Wanwan",
+    "imageHero": "hero86",
+    "role": "Gold"
+  },
+  {
+    "hero": "Silvana",
+    "imageHero": "hero87",
+    "role": "Exp"
+  },
+  {
+    "hero": "Cecilion",
+    "imageHero": "hero88",
+    "role": "Mage"
+  },
+  {
+    "hero": "Camila",
+    "imageHero": "hero89",
+    "role": "Roam"
+  },
+  {
+    "hero": "Atlas",
+    "imageHero": "hero90",
+    "role": "Roam"
+  },
+  {
+    "hero": "Popol & Kupa",
+    "imageHero": "hero91",
+    "role": "Jung"
+  },
+  {
+    "hero": "Yu Zhong",
+    "imageHero": "hero92",
+    "role": "Exp"
+  },
+  {
+    "hero": "Luo Yi",
+    "imageHero": "hero93",
+    "role": "Mage"
+  },
+  {
+    "hero": "Beneddeta",
+    "imageHero": "hero94",
+    "role": "Exp"
+  },
+  {
+    "hero": "Khaleed",
+    "imageHero": "hero95",
+    "role": "Exp"
+  },
+  {
+    "hero": "Barats",
+    "imageHero": "hero96",
+    "role": "Jung"
+  },
+  {
+    "hero": "Brody",
+    "imageHero": "hero97",
+    "role": "Gold"
+  },
+  {
+    "hero": "Yve",
+    "imageHero": "hero98",
+    "role": "Mage"
+  },
+  {
+    "hero": "Mathilda",
+    "imageHero": "hero99",
+    "role": "Roam"
+  },
+  {
+    "hero": "Paquito",
+    "imageHero": "hero100",
+    "role": "Exp"
+  },
+  {
+    "hero": "Gloo",
+    "imageHero": "hero102",
+    "role": "Exp"
+  },
+  {
+    "hero": "Beatrix",
+    "imageHero": "hero103",
+    "role": "Gold"
+  },
+  {
+    "hero": "Phoveus",
+    "imageHero": "hero104",
+    "role": "Exp"
+  },
+  {
+    "hero": "Nathan",
+    "imageHero": "hero105",
+    "role": "Gold"
+  },
+  {
+    "hero": "Aulus",
+    "imageHero": "hero106",
+    "role": "Jung"
+  },
+  {
+    "hero": "Aamon",
+    "imageHero": "hero107",
+    "role": "Jung"
+  },
+  {
+    "hero": "Valentina",
+    "imageHero": "hero108",
+    "role": "Mage"
+  },
+  {
+    "hero": "Edith",
+    "imageHero": "hero109",
+    "role": "Exp"
+  },
+  {
+    "hero": "Floryn",
+    "imageHero": "hero110",
+    "role": "Roam"
+  },
+  {
+    "hero": "Yin",
+    "imageHero": "hero111",
+    "role": "Jung"
+  },
+  {
+    "hero": "Melissa",
+    "imageHero": "hero112",
+    "role": "Gold"
+  },
+  {
+    "hero": "Xavier",
+    "imageHero": "hero113",
+    "role": "Mage"
+  },
+  {
+    "hero": "Julian",
+    "imageHero": "hero114",
+    "role": "Jung"
+  },
+  {
+    "hero": "Fredrin",
+    "imageHero": "hero115",
+    "role": "Jung"
+  },
+  {
+    "hero": "Joy",
+    "imageHero": "hero116",
+    "role": "Jung"
+  },
+  {
+    "hero": "Novaria",
+    "imageHero": "hero117",
+    "role": "Mage"
+  },
+  {
+    "hero": "Arlot",
+    "imageHero": "hero118",
+    "role": "Exp"
+  }
 ]
