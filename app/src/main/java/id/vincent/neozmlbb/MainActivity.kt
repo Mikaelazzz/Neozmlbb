@@ -21,6 +21,9 @@ import android.content.Intent
 import android.content.IntentFilter
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
+import android.os.Handler
+import android.os.Looper
+import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.core.view.setPadding
 
@@ -379,21 +382,27 @@ fun MainActivity.showToast(message: String) {
 class MainActivity : AppCompatActivity() {
     private lateinit var heroShuffleManager: HeroShuffleManager
     private lateinit var networkChangeReceiver: NetworkChangeReceiver
+    private var isWaitingForUserAction = false // Flag to control if user needs to press the button
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-
         // Register NetworkChangeReceiver
         try {
             networkChangeReceiver = NetworkChangeReceiver { isConnected ->
                 if (isConnected) {
-
-                    setupMainLayout() // Muat ulang layout utama
+                    // If connected, show 'Try Again' layout and wait for user action
+                    if (isWaitingForUserAction) {
+                        showNoInternetLayout() // Keep showing the no internet layout until the user clicks the button
+                    } else {
+                        // Internet connection restored, but wait for user to press "Try Again"
+                        isWaitingForUserAction = true
+                        Toast.makeText(this, "Koneksi internet kembali!", Toast.LENGTH_SHORT).show()
+                    }
                 } else {
-
-                    showNoInternetLayout() // Tampilkan pesan tidak ada internet
+                    // No internet connection, keep the no internet layout
+                    showNoInternetLayout()
                 }
             }
 
@@ -403,11 +412,9 @@ class MainActivity : AppCompatActivity() {
             // Inisialisasi layout sesuai kondisi awal
             checkInternetAndSetup()
         } catch (e: Exception) {
-
+            e.printStackTrace() // Handle exceptions
         }
     }
-
-
 
     override fun onDestroy() {
         super.onDestroy()
@@ -418,10 +425,6 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-
-    /**
-     * Periksa koneksi internet dan atur layout yang sesuai
-     */
     private fun checkInternetAndSetup() {
         if (NetworkUtil.isConnected(this)) {
             setupMainLayout()
@@ -430,27 +433,33 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    /**
-     * Tampilkan layout tanpa internet
-     */
     private fun showNoInternetLayout() {
         setContentView(R.layout.internet)
+
         val retryButton: Button = findViewById(R.id.button_signal)
+        val progressBar: ProgressBar = findViewById(R.id.progress_bar)
 
         // Tombol untuk mencoba ulang
         retryButton.setOnClickListener {
-            if (NetworkUtil.isConnected(this)) {
-                setupMainLayout() // Muat ulang layout utama jika internet tersedia
-            } else {
-                Toast.makeText(this, "Tidak ada koneksi internet!", Toast.LENGTH_SHORT).show()
-            }
+            // Menampilkan ProgressBar
+            progressBar.visibility = View.VISIBLE
+            retryButton.isEnabled = false  // Menonaktifkan tombol agar tidak bisa ditekan selama pengecekan
+
+            // Lakukan pengecekan koneksi dengan delay
+            Handler(Looper.getMainLooper()).postDelayed({
+                if (NetworkUtil.isConnected(this)) {
+                    setupMainLayout() // Muat ulang layout utama jika internet tersedia
+                    isWaitingForUserAction = false // Reset waiting flag
+                } else {
+                    Toast.makeText(this, "Tidak ada koneksi internet!", Toast.LENGTH_SHORT).show()
+                    progressBar.visibility = View.GONE  // Menyembunyikan progress bar
+                    retryButton.isEnabled = true  // Mengaktifkan kembali tombol "Coba Lagi"
+                }
+            }, 2500) // Delay selama 5 detik
         }
     }
 
 
-    /**
-     * Inisialisasi layout utama dan logika aplikasi
-     */
     private fun setupMainLayout() {
         setContentView(R.layout.activity_main)
 
