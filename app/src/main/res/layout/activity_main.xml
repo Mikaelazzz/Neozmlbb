@@ -81,18 +81,16 @@
             android:fontFamily="@font/poppinsbold"
             android:textSize="17sp"
             android:layout_marginBottom="10dp"
-            android:paddingRight="50dp"
-            android:paddingLeft="50dp"/>
+            android:layout_marginRight="25dp"
+            android:layout_marginLeft="25dp"/>
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/heroes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
             android:layout_marginBottom="10dp"
             android:layout_gravity="center"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
             >
 
         </androidx.recyclerview.widget.RecyclerView>
