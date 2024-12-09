@@ -19,6 +19,7 @@ import kotlinx.coroutines.*
 import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
+import android.content.pm.ActivityInfo
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.os.Handler
@@ -267,31 +268,31 @@ class HeroShuffleManager(
             heroesRecyclerView.visibility = View.VISIBLE
 
             // Tampilkan pesan pop-up setelah selesai swapping
-            showFunModeMessage()
+//            showFunModeMessage()
         }
     }
 
-    // Fungsi untuk menampilkan AlertDialog setelah selesai swapping
-    private fun showFunModeMessage() {
-        val builder = android.app.AlertDialog.Builder(mainActivity)
-
-        // Set message and button
-        builder.setMessage("Gunakan hero ini hanya di mode Clasic yaa..")
-            .setCancelable(false)
-            .setPositiveButton("OK") { dialog, id ->
-                // Menutup dialog ketika tombol OK ditekan
-                dialog.dismiss()
-            }
-
-        // Menambahkan custom layout untuk AlertDialog
-        val alert = builder.create()
-
-        // Menetapkan background dari drawable
-        alert.window?.setBackgroundDrawableResource(R.drawable.back)
-
-        // Menampilkan dialog
-        alert.show()
-    }
+//    // Fungsi untuk menampilkan AlertDialog setelah selesai swapping
+//    private fun showFunModeMessage() {
+//        val builder = android.app.AlertDialog.Builder(mainActivity)
+//
+//        // Set message and button
+//        builder.setMessage("Gunakan hero ini hanya di mode Clasic yaa..")
+//            .setCancelable(false)
+//            .setPositiveButton("OK") { dialog, id ->
+//                // Menutup dialog ketika tombol OK ditekan
+//                dialog.dismiss()
+//            }
+//
+//        // Menambahkan custom layout untuk AlertDialog
+//        val alert = builder.create()
+//
+//        // Menetapkan background dari drawable
+//        alert.window?.setBackgroundDrawableResource(R.drawable.back)
+//
+//        // Menampilkan dialog
+//        alert.show()
+//    }
 
 
 
@@ -387,6 +388,9 @@ class MainActivity : AppCompatActivity() {
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
+        setContentView(R.layout.activity_main)
 
         // Register NetworkChangeReceiver
         try {
